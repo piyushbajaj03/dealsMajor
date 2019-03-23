@@ -46,7 +46,7 @@
                 <h1 class="push_4" style="padding: 10px;" >Shopkeeper registration</h1>    
                 <hr/> <br/><div class="grid_9 push_2" style="padding:10px;">
                        <!-- <form method="post" action="admin_login">-->
-                            <form method="post" action="registerServlet">
+                            <form method="post" action="/addAdmin">
                             <div class="grid_2">
                                 Email
                             </div>
@@ -59,20 +59,20 @@
                                 Password 
                             </div>
                             <div class="grid_5">
-                                <input type="password" name="pass" placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;" /><br/><br/> 
+                                <input type="password" name="password" placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;" /><br/><br/> 
          
                             </div>
                             <div class="grid_2">
                                  Mobile No.
                             </div>
                             <div class="grid 5">
-                            <input type="number" name="mobile no" placeholder="mobile no"/>
+                            <input type="number" name="mobile" placeholder="mobile no"/>
                             </div>
                             <div class="grid 2">
                                  shop name
                             </div>
                             <div class="grid 5">
-                            <input type="text" name="shopname" placeholder="shopname"/>
+                            <input type="text" name="shopName" placeholder="shopname"/>
                             </div>
                              <div class="grid 2">
                                  your's name
@@ -90,7 +90,7 @@
                                 Address of shop
                             </div>
                             <div class="grid 5">
-                             <input type="text" name="Address" placeholder="address"/>
+                             <input type="text" name="address" placeholder="address"/>
                               <input id="greenBtn" type="submit" value="Register"/>
                             </div>
                             

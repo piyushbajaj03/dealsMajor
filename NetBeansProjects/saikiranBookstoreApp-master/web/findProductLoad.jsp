@@ -45,7 +45,7 @@ GROUP BY  `product-name`
 */
                 sqlSearch = "SELECT * FROM  `products` p "
                             + "INNER JOIN  `images` i "
-                            + "USING (  `product-name` ) WHERE ";
+                            + "USING (  `product-name` ) WHERE admin_id=1 and ";
                 //out.println (""+sqlSearch);
                 for (int i=0; i<searches.length; i++){
                     if (searches[i].trim().length() > 2){
@@ -58,7 +58,7 @@ GROUP BY  `product-name`
                     }
                 }
                 //out.println (" GROUP BY  `product-name` ");
-                sqlSearch+=" AND `product_qty` > 5 ";
+                sqlSearch+="  `product_qty` > 5 ";
                 
                 sqlSearch+=" GROUP BY  `product-name` ";
                 

@@ -124,7 +124,31 @@ public class loginServlet extends HttpServlet {
                         user User = new user();
                         User.setUserEmail(email);
                         userSession.setAttribute("user", User);
-                        response.sendRedirect(request.getContextPath()+"/index.jsp");
+                        
+//                        
+//                       int id=0;
+//                        DB_Conn conMaker=new DB_Conn();
+//                        Connection conn=conMaker.getConnection();
+//                        String query ="SELECT admin_id FROM administrators WHERE email='"+email+"'"+";";
+//                        Statement statement=conn.createStatement();
+//                        ResultSet result=st.executeQuery();
+//                        if(result.next())
+//                            id=result.getInt(1);
+//                        userSession.setAttribute("id",id);
+//                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+         
+//                          out.print("ur id = "+id)    ;  
+//                          out.print(userSession.getAttribute("id"));
+                        
+                          
+                          response.sendRedirect(request.getContextPath()+"/index.jsp");
                       }
                     else {
                         isLoggedIn = false;

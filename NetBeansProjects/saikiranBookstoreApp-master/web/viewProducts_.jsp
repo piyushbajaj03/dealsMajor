@@ -76,11 +76,18 @@
                 <div id="leftside" class="grid_3">
                     
                     <%
+                        Integer id;
+                        id=(Integer)(session.getAttribute("id"));
+                        
+                        out.print("<h1>");
+                        out.print(""+id);
+                        out.print("<h1>");
+                        
                         String category, subcategory;
                         StringBuffer sql = new StringBuffer();
                         sql.append("SELECT * FROM  `products` p "
                                         + "INNER JOIN  `images` i "
-                                        + "USING (  `product-name` ) ");
+                                        + "USING (  `product-name` ) where admin_id="+id);
                         
                         category = "";
                         subcategory = "";
@@ -187,13 +194,13 @@
                         ResultSet rs ;
                          if (sql.toString().equalsIgnoreCase("SELECT * FROM  `products` p "
                                                             + "INNER JOIN  `images` i "
-                                                            + "USING (  `product-name` ) "
+                                                            + "USING (  `product-name` ) where admin_id=1"
                                                             )){
                             
                             String newSQL  = "SELECT * FROM  `products` p "
                                             + "INNER JOIN  `images` i "
                                            + "USING (  `product-name` ) "
-                                            + " WHERE `product_qty` > 0 "
+                                            + " WHERE `product_qty` > 0 and admin_id=1 "
                                           +" GROUP BY  `product-name` "
                                          + " ORDER BY  `hits` DESC  ";
                             //out.print("Equals "+sql.toString() +" "+newSQL);

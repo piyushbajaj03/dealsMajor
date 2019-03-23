@@ -13,6 +13,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -110,25 +111,45 @@ public class admin_login extends HttpServlet {
             PreparedStatement st = c.prepareStatement(sqlGetUsers);
 
             ResultSet rs = st.executeQuery();
+           // out.print("welcome ");
 
             while (rs.next()) {
                 db_email = rs.getString("email");
                 db_pass = rs.getString("password");
-
+//              out.print("welcome");
                 if (email.equals(db_email)) {
                     message = "Your email-id exists with us!";
                     //you exist with us
                     if (pass.equals(db_pass)) {
                         isLoggedIn = true;
                         //user exists and password is matching
-                        //out.print("You are logged in");
+//                      out.print("You are logged in");
                         user User = new user();
                         administrator Administrator = new administrator();
                         Administrator.setAdmin_email(db_email);
                         User.setUserEmail(email);
                         userSession.setAttribute("user", User);
                         userSession.setAttribute("admin", Administrator);
-                        response.sendRedirect(request.getContextPath());
+                        
+                                
+                        int id=0;
+                        DB_Conn conMaker=new DB_Conn();
+                        Connection conn=conMaker.getConnection();
+                        String query ="SELECT admin_id FROM administrators WHERE email='"+email+"'"+";";
+                        out.print(query);
+                        Statement statement=conn.createStatement();
+                        ResultSet result=st.executeQuery(query);
+                        if(result.next())
+                            id=result.getInt("admin_id");
+                        userSession.setAttribute("id",id);
+                        
+                        
+                        
+//                      out.print("\n"+"ur id = "+id+"\n")    ;  
+//                      out.print(userSession.getAttribute("id")+"\n");
+                        
+                        
+                      response.sendRedirect(request.getContextPath());
                       }
                     else {
                         isLoggedIn = false;
@@ -155,13 +176,16 @@ public class admin_login extends HttpServlet {
             }
         } 
         catch (SQLException e) {
+             out.print(e.getMessage());
             message = "Error in the Login process";
                     messageDetail = "There was an error in the process of login Please try after some time!";
                     
             request.setAttribute("message", message);
             request.setAttribute("messageDetail", messageDetail);
             //dispatchMessage.forward(request, response);
+            out.print(e.getMessage());
         } catch (Exception e) {
+            out.print(e.getMessage());
            message = "Error in the Login process";
                     messageDetail = "There was an error in the process of login Please try after some time!";
                   

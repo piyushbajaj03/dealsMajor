@@ -49,7 +49,7 @@
             Statement st = con.createStatement();
 
 
-            String getProductQuery = "SELECT * FROM  `products` p INNER JOIN  `images` i USING (  `product-name` ) WHERE  `product_id` ="+id+" GROUP BY  `product-name` ";
+            String getProductQuery = "SELECT * FROM  `products` p INNER JOIN  `images` i USING (  `product-name` ) WHERE and admin_id=1 and `product_id` ="+id+" GROUP BY  `product-name` ";
             ResultSet rs = st.executeQuery(getProductQuery);
 
             rs.next();

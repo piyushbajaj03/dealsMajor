@@ -76,7 +76,17 @@
                                 <input type="password" name="passAgain" placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;" /><br/>
                             </td>
                         </tr>
-                       
+                        <!--	<tr>
+                                        <td>
+                                        <label>Gender</label>
+                                        </td>
+                                        <td>
+                                        <select>
+                                                <option name="gender" value="male">Male</option>
+                                                <option name="gender" value="female">Female</option>
+                                        </select><br/>
+                                        </td>
+                                </tr>-->
 
                         <tr>
                             <td>

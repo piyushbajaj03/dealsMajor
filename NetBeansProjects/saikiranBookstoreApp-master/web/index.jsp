@@ -6,7 +6,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>Best Deals</title>
+        <title>SaiKiran BookStores</title>
         <!-- Default Stylesheets -->
         <%@include file="includesPage/_stylesheets.jsp" %>
 
@@ -59,7 +59,7 @@
 
                     <li class="sliderImage" style="display: none; ">
 
-                        <img src="images/banner/b1.jpg" width="900" height="300" /> 
+                        <img src="images/banner/b1.png" width="900" height="300" /> 
 
                         <span class="top" style="display: none; ">
 
@@ -74,7 +74,7 @@
                     </li>  
                     <li class="sliderImage" style="display: none; ">
 
-                        <img src="images/banner/b2.jpg" width="900" height="300" /> 
+                        <img src="images/banner/b2.png" width="900" height="300" /> 
 
                         <span class="top" style="display: none; ">
 
@@ -114,27 +114,6 @@
 
                     <li class="sliderImage" style="display: none; ">
 
-                        <img src="images/banner/b3.jpg" width="900" height="300" /> 
-
-                        <span class="top" style="display: none; ">
-
-                            <strong>Graphic Novels...</strong>				
-
-                            <br>The most amazing titles that you always wanted to get your hands onn.. 
-
-                            Now you have the opportunity to have them all in your personal library.
-
-                            International as well as Indian titles of many authors available
-
-                        </span>
-
-                    </li>   
-                    
-                    
-                    
-                    
-                      <li class="sliderImage" style="display: none; ">
-
                         <img src="images/banner/b7.jpg" width="900" height="300" /> 
 
                         <span class="top" style="display: none; ">
@@ -149,7 +128,7 @@
 
                         </span>
 
-                    </li> 
+                    </li>   
 
 
 

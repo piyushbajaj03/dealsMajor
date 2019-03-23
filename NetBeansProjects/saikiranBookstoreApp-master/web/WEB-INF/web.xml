@@ -208,6 +208,18 @@
         <servlet-name>removeCategory</servlet-name>
         <url-pattern>/removeCategory</url-pattern>
     </servlet-mapping>
+    
+    
+     <servlet>
+        <servlet-name>AdminRegisterServlet</servlet-name>
+        <servlet-class>admin.AdminRegisterServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminRegisterServlet</servlet-name>
+        <url-pattern>/addAdmin</url-pattern>
+    </servlet-mapping>
+    
+    
     <session-config>
         <session-timeout>
             30

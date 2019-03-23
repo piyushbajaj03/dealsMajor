@@ -5,11 +5,9 @@
             <div id="logo" class="grid_6"> <a href="index.jsp"><img src="images/logo/icon.png" /></a>
             </div>
             <div class="grid_6" id="top">
-                
-                    <a href="#" id="join">
-                        <ul>
-                        <li id="greenBtn"  class ="Btn showForm">Join Now!!</li></a>
-</ul>
+                <ul>
+                    <a href="#" id="join"><li id="greenBtn"  class ="Btn showForm">Join Now!!</li></a>
+                </ul>
             </div>
         </div>
     </div>
@@ -91,7 +89,17 @@
                                 <input type="password" name="passAgainReg" placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;" required/><br/>
                             </td>
                         </tr>
-                    
+                        <!--	<tr>
+                                        <td>
+                                        <label>Gender</label>
+                                        </td>
+                                        <td>
+                                        <select>
+                                                <option name="gender" value="male">Male</option>
+                                                <option name="gender" value="female">Female</option>
+                                        </select><br/>
+                                        </td>
+                                </tr>-->
 
                         <tr>
                             <td>
