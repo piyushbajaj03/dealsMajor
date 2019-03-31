@@ -147,9 +147,9 @@ public class admin_login extends HttpServlet {
                         
 //                      out.print("\n"+"ur id = "+id+"\n")    ;  
 //                      out.print(userSession.getAttribute("id")+"\n");
-                        
-                        
-                      response.sendRedirect(request.getContextPath());
+         RequestDispatcher rd =request.getRequestDispatcher("/viewProducts_.jsp");
+                 rd.forward(request, response);
+                  //response.sendRedirect(request.getContextPath());
                       }
                     else {
                         isLoggedIn = false;

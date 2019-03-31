@@ -105,13 +105,14 @@ public class AdminRegisterServlet extends HttpServlet {
               HttpSession userSession = request.getSession();
           boolean isRegistered;
           Connection conn =conMaker.getConnection();
-//          String query="INSERT INTO administrators(name,password,city,mobile,email,address,shopName)"
-//                  + " values(+"+name+","+password+","+city+","+mobile+","+email+","+address+","+shopName+");";
-//          
-//          Statement st=conn.createStatement();
-//          st.executeUpdate(query);
+         String query="INSERT INTO administrators(name,password,city,mobile,email,address,shopName)"
+                  + " values(+"+name+","+password+","+city+","+mobile+","+email+","+address+","+shopName+");";
+                    Statement st=conn.createStatement();
+         st.executeUpdate(query);
+        // String query4="Insert into product(city)"+"values("+city+");";
 //          out.print("Admin added\n");
 //          out.print("query \n");
+        //st.executeUpdate(query4);
 //          
           String sql = "INSERT INTO user"
                                     + "(email,pass ,registeredOn)"

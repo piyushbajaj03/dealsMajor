@@ -1,11 +1,15 @@
-
+<%-- 
+    Document   : admin_performance
+    Created on : 22 Nov, 2012, 10:20:00 PM
+    Author     : chirag
+--%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>Best Deals</title>
+        <title>SaiKiran BookStores</title>
         <jsp:useBean class="product.product" id="product" scope="session"></jsp:useBean>
 
         <%@page import="java.sql.*, database.*" %>

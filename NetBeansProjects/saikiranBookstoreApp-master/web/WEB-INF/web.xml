@@ -80,6 +80,10 @@
         <servlet-name>removeCategory</servlet-name>
         <servlet-class>product.removeCategory</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>MoreDetails</servlet-name>
+        <servlet-class>product.MoreDetails</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>loginServlet</servlet-name>
         <url-pattern>/login</url-pattern>
@@ -208,9 +212,7 @@
         <servlet-name>removeCategory</servlet-name>
         <url-pattern>/removeCategory</url-pattern>
     </servlet-mapping>
-    
-    
-     <servlet>
+    <servlet>
         <servlet-name>AdminRegisterServlet</servlet-name>
         <servlet-class>admin.AdminRegisterServlet</servlet-class>
     </servlet>
@@ -218,8 +220,10 @@
         <servlet-name>AdminRegisterServlet</servlet-name>
         <url-pattern>/addAdmin</url-pattern>
     </servlet-mapping>
-    
-    
+    <servlet-mapping>
+        <servlet-name>MoreDetails</servlet-name>
+        <url-pattern>/MoreDetails</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30

@@ -122,24 +122,20 @@
                 <a href="admin_manageProduct.jsp" id="buy"  class="grid_3"><%= qty %> Items below Quantity</a>     
                 <a href="admin_approvedOrders.jsp" id="buy"  class="grid_3"><%= approvedOrders %> Items to be Delivered</a>    
                 <a href="admin_pendingOrders.jsp" id="buy" class="grid_3"><%= pendingOrders %> Items to be Approved</a>    
-           </div>
+          
                 <div class="clear"></div>
             <!--Loading the AJAX API-->
                 <script type="text/javascript" src="js/gclibrary/jsapi.js"></script>
                 <script type="text/javascript" src="js/gclibrary/core.js"></script>
                 <script type="text/javascript" src="js/gclibrary/core1.js"></script>
                 
-                <jsp:include page="includesPage/gChartings/gChart_ComboLine.jsp"></jsp:include>
-                
-                <jsp:include page="includesPage/hesders_sidebars/admin_menuSideBar.jsp"></jsp:include>
+                                </div>
+                 <jsp:include page="includesPage/hesders_sidebars/admin_menuSideBar.jsp"></jsp:include>
                 <div class="grid_13">
-                <jsp:include page="includesPage/gChartings/gCharts_pieChartItemsSoldByCategory.jsp"></jsp:include>
-                <jsp:include page="includesPage/gChartings/gCharts_pieChartItemsViewedByCategory.jsp"></jsp:include>
-                </div>
                 <jsp:include page="includesPage/gChartings/gCharts_top10ProductsSold.jsp"></jsp:include>
                 <jsp:include page="includesPage/gChartings/gCharts_top10Products_viewed.jsp"></jsp:include>
                 
         </div>
-        
+        </div>
     </body>
 </html>

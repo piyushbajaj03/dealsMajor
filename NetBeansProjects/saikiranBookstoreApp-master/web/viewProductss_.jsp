@@ -4,7 +4,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>SaiKiran BookStores</title>
+        <title>Best Deals</title>
         <jsp:useBean class="product.product" id="product" scope="session"></jsp:useBean>
 
         <%@page import="java.sql.*, database.*" %>
@@ -76,11 +76,18 @@
                 <div id="leftside" class="grid_3">
                     
                     <%
+                        Integer id;
+                        id=(Integer)(session.getAttribute("id"));
+                        
+                        out.print("<h1>");
+                        out.print(""+id);
+                        out.print("<h1>");
+                        
                         String category, subcategory;
                         StringBuffer sql = new StringBuffer();
                         sql.append("SELECT * FROM  `products` p "
                                         + "INNER JOIN  `images` i "
-                                        + "USING (  `product-name` ) ");
+                                        + "USING (  `product-name` ) where admin_id="+id);
                         
                         category = "";
                         subcategory = "";
@@ -125,41 +132,7 @@
                             <%
                         }
                     %>
-                    <!--
-                    <div>
-                        <ul id="leftsideNav">
-                            <li><a href="#"><strong>Categories</strong></a></li>
-                            <li><a href="#">Books</a></li>
-                            <li><a href="#">Calculators</a></li>
-                            <li><a href="#">Art Supplies</a></li>
-                            <li><a href="#">Office Supplies</a></li>
-                            <li><a href="#">School Supplies</a></li>
-                            <li><a href="#">Games</a></li>
-                            <li><a href="#">Movies</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div>
-                        <ul id="leftsideNav">
-                            <li><a href="#"><strong>Sub-Categories</strong></a></li>
-                            <li><a href="#">Books</a></li>
-                            <li><a href="#">Calculators</a></li>
-                            <li><a href="#">Art Supplies</a></li>
-                            <li><a href="#">Office Supplies</a></li>
-                            <li><a href="#">School Supplies</a></li>
-                            <li><a href="#">Games</a></li>
-                            <li><a href="#">Movies</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div>
-                        <ul id="leftsideNav">
-                            <li><a href="#"><strong>Pricing</strong></a></li>
-                            <li><a href="#">Low to High</a></li>
-                            <li><a href="#">High to Low</a></li>
-                        </ul>
-                    </div>
-                    -->
+                   
                     
                     <div class="adv">
                         <h2><br/>This is The Header of an Advertisement</h2>
@@ -186,10 +159,7 @@
                         <%
                             if (session.getAttribute("cat") != null){
                                 category = (String)session.getAttribute("cat");
-                                /*
-WHERE  `category-name` =  'Games'
-AND  `sub-category-name` =  'Action-Adventure-Game'
-GROUP BY  `product-name` */
+                               
                                 
                                 sql.append(" WHERE  `category-name` =  '"+category+"' ");
                                 %>
@@ -216,11 +186,7 @@ GROUP BY  `product-name` */
                         %>
                         
                         <%
-                            //String sql = "SELECT * FROM  `products` p "
-                             //           + "INNER JOIN  `images` i "
-                             //           + "USING (  `product-name` ) 
-                             //             +`product_qty` > 0
-                              //          + "GROUP BY  `product-name` ";
+                            
 
                         DB_Conn con = new DB_Conn();
                         Connection c = con.getConnection();
@@ -228,13 +194,13 @@ GROUP BY  `product-name` */
                         ResultSet rs ;
                          if (sql.toString().equalsIgnoreCase("SELECT * FROM  `products` p "
                                                             + "INNER JOIN  `images` i "
-                                                            + "USING (  `product-name` ) "
+                                                            + "USING (  `product-name` ) where admin_id=1"
                                                             )){
                             
                             String newSQL  = "SELECT * FROM  `products` p "
                                             + "INNER JOIN  `images` i "
                                            + "USING (  `product-name` ) "
-                                            + " WHERE `product_qty` > 0 "
+                                            + " WHERE `product_qty` > 0 and admin_id=1 "
                                           +" GROUP BY  `product-name` "
                                          + " ORDER BY  `hits` DESC  ";
                             //out.print("Equals "+sql.toString() +" "+newSQL);
@@ -263,8 +229,7 @@ product-name	product_id	sub-category-name	category-name	company-name	price	summa
                                     String company_name = rs.getString("company-name");
 
                                     String price = rs.getString("price");
-                                    String city = rs.getString("city"); 
-                                    
+
                                     String summary = rs.getString("summary");
                                     
                                     String image_name = rs.getString("image-name");
@@ -285,11 +250,10 @@ product-name	product_id	sub-category-name	category-name	company-name	price	summa
                         </div>
                         <div class="grid_9">
                             <div class="grid_5">
-                                <p id="info"><a href="product.jsp?id=<%=product_id%>"><h3><span class="blue"> <%=product_name %></span></h3> </a>By <%= company_name+" "+ category_name+" "%><br/><span class="red">Rs. <%= price %> city<%=city%></span> </p>
+                                <p id="info"><a href="product.jsp?id=<%=product_id%>"><h3><span class="blue"> <%=product_name %></span></h3></a>By <%= company_name+" "+ category_name %><br/><span class="red">Rs. <%= price %></span></p>
                             </div>
                             <div class="grid_3 push_2">
-                               <p><%=sub_category_name %>  <a href="addToCart.jsp?id=<%= product_id %>" id="greenBtn">Add to cart</a></p><p>offer available till stock last </p>
-                               <p><%=sub_category_name%>   <a href="MoreDetails.jsp?id=<%= product_id%>" id="greenBtn">More details</a></p>                 
+                                <p><%=sub_category_name %>  <a href="<%= product_id %>" id="greenBtn">shop details</a></p><p>offer available till stock last </p>
                             </div>
                         </div>
                         <div class="clear"></div>

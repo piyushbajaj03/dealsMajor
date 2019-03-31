@@ -50,8 +50,10 @@
 
 
             String getProductQuery = "SELECT * FROM  `products` p INNER JOIN  `images` i USING (  `product-name` ) WHERE and admin_id=1 and `product_id` ="+id+" GROUP BY  `product-name` ";
-            ResultSet rs = st.executeQuery(getProductQuery);
-
+            String getAddress="Select city from `administrators` a INNER JOIN `products` p USING( `admin_id`) where `product_id`="+id+"";
+            ResultSet rs2=st.executeQuery(getAddress);
+             ResultSet rs = st.executeQuery(getProductQuery);
+            
             rs.next();
             //out.println(""+rs.getString("product-name"));
 
@@ -73,7 +75,8 @@
             String summary = rs.getString("summary");
 
             String image_name = rs.getString("image-name");
-
+            rs2.next();
+            String city= rs2.getString("city");
         %>
 
 

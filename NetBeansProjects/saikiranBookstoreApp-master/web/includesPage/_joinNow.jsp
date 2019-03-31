@@ -89,6 +89,15 @@
                                 <input type="password" name="passAgainReg" placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;" required/><br/>
                             </td>
                         </tr>
+                        <tr>
+                            <td>
+                                <label>city</label>
+                            </td>
+                            <td>
+                                <input type="text" name="city" placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;" required/><br/>
+                            </td>
+                        </tr>
+                        
                         <!--	<tr>
                                         <td>
                                         <label>Gender</label>
