@@ -4,7 +4,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>SaiKiran BookStores</title>
+        <title>Best deals</title>
         <jsp:useBean class="product.product" id="product" scope="session"></jsp:useBean>
 
         <%@page import="java.sql.*, database.*" %>
@@ -285,11 +285,11 @@ product-name	product_id	sub-category-name	category-name	company-name	price	summa
                         </div>
                         <div class="grid_9">
                             <div class="grid_5">
-                                <p id="info"><a href="product.jsp?id=<%=product_id%>"><h3><span class="blue"> <%=product_name %></span></h3> </a>By <%= company_name+" "+ category_name+" "%><br/><span class="red">Rs. <%= price %> city<%=city%></span> </p>
+                                <p id="info"><a href="product.jsp?id=<%=product_id%>"><h3><span class="blue"> <%=product_name %></span></h3> </a>By <%= company_name+" "+ category_name+" "%><br/><span class="red">Rs. <%= price %></span> </p>
                             </div>
                             <div class="grid_3 push_2">
                                <p><%=sub_category_name %>  <a href="addToCart.jsp?id=<%= product_id %>" id="greenBtn">Add to cart</a></p><p>offer available till stock last </p>
-                               <p><%=sub_category_name%>   <a href="MoreDetails.jsp?id=<%= product_id%>" id="greenBtn">More details</a></p>                 
+                               <p id="info"><a href="MoreDetails.jsp?id=<%= product_id%>" id="greenBtn">More details</a></p>                 
                             </div>
                         </div>
                         <div class="clear"></div>

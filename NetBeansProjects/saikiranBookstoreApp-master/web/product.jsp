@@ -6,7 +6,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>Best Deals</title>
+        <title>SaiKiran BookStores</title>
         <link rel="shortcut icon" href="images/logo/ico.ico"/>
 
         <link rel="stylesheet" type="text/css" href="css/reset.css"/>
@@ -49,11 +49,9 @@
             Statement st = con.createStatement();
 
 
-            String getProductQuery = "SELECT * FROM  `products` p INNER JOIN  `images` i USING (  `product-name` ) WHERE and admin_id=1 and `product_id` ="+id+" GROUP BY  `product-name` ";
-            String getAddress="Select city from `administrators` a INNER JOIN `products` p USING( `admin_id`) where `product_id`="+id+"";
-            ResultSet rs2=st.executeQuery(getAddress);
-             ResultSet rs = st.executeQuery(getProductQuery);
-            
+            String getProductQuery = "SELECT * FROM  `products` p INNER JOIN  `images` i USING (  `product-name` ) WHERE  `product_id` ="+id+" GROUP BY  `product-name` ";
+            ResultSet rs = st.executeQuery(getProductQuery);
+
             rs.next();
             //out.println(""+rs.getString("product-name"));
 
@@ -70,13 +68,11 @@
             String company_name = rs.getString("company-name");
 
             String price = rs.getString("price");
-            String discount= rs.getString("discount");
 
             String summary = rs.getString("summary");
 
             String image_name = rs.getString("image-name");
-            rs2.next();
-            String city= rs2.getString("city");
+
         %>
 
 
@@ -105,17 +101,15 @@
                             <div class="grid_1" id="buy">
                                 Edit
                             </div>
-                            
                         </a>
                         <%
                             }
                         %>
-                        <div> Discount =</div>
                        
 
                         <a href="addToCart.jsp?id=<%= product_id %>">
                             <div class="grid_3" id="buy">
-                                Know more shop details
+                                Buy This Product Now
                             </div>
                         </a>
                            
